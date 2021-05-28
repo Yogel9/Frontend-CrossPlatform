@@ -1,0 +1,16 @@
+.content  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  width: -webkit-fill-available;
+  background-image: url('/assets/img/Wall.jpg') !important;
+  background-size: cover;
+  background-position: center center;
+}
+
+.Main_Part{
+
+  height: 81%;
+}

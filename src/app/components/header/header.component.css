@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background:white;
+  background-image: url('/assets/img/Wall.jpg') !important;
+  background-size: cover;
+  background-position: center center;
+}
+.svg_emblema {
+  display: flex;
+  height: inherit;
+  width: 6%;
+  overflow: visible;
+}
+
+.content {
+  height: 100%;
+
+}
