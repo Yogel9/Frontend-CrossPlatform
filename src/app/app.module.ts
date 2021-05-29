@@ -12,6 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {HomeComponent} from './components/home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './components/menu/menu.component';
+import {HttpClientModule} from '@angular/common/http';
+import { AllOrdersComponent } from './components/all-orders/all-orders.component';
 
 const routes: Routes = [
   {
@@ -23,7 +25,10 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: '',
-  }
+  },
+  {
+    path: 'all-order', component: AllOrdersComponent,
+  },
 ];
 
 @NgModule({
@@ -31,7 +36,8 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AllOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,7 @@ const routes: Routes = [
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

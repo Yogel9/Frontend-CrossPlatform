@@ -20,4 +20,8 @@ export class HeaderComponent implements OnInit {
   public goToHome(): void {
     this.router.navigate(['']);
   }
+
+  public goToAllorder(): void {
+    this.router.navigate(['all-order']);
+  }
 }
