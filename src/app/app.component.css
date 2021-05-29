@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  height: 100%;
+
   width: -webkit-fill-available;
   background-image: url('/assets/img/Wall.jpg') !important;
   background-size: cover;
@@ -12,5 +12,9 @@
 
 .Main_Part{
 
-  height: 81%;
+  height: auto;
+}
+.header
+{
+  height: 110px;
 }
