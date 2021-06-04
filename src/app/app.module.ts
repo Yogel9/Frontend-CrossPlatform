@@ -13,22 +13,16 @@ import {HomeComponent} from './components/home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './components/menu/menu.component';
 import {HttpClientModule} from '@angular/common/http';
-import { AllOrdersComponent } from './components/all-orders/all-orders.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { UserComponent } from './components/user/user.component';
+import { FurnituresComponent } from './components/furnitures/furnitures.component';
 
 const routes: Routes = [
-  {
-    path: '', component: HomeComponent,
-  },
-  {
-    path: 'menu', component: MenuComponent,
-  },
-  {
-    path: '**',
-    redirectTo: '',
-  },
-  {
-    path: 'all-order', component: AllOrdersComponent,
-  },
+  {path: '', component: HomeComponent, },
+  {path: 'menu', component: MenuComponent, },
+  {path: 'auth', component: AuthComponent, },
+  {path: 'user', component: UserComponent, },
+  {path: '**', component: HomeComponent, }, /*redirectTo: '',*/
 ];
 
 @NgModule({
@@ -37,7 +31,9 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AllOrdersComponent
+    AuthComponent,
+    UserComponent,
+    FurnituresComponent
   ],
   imports: [
     BrowserModule,

@@ -16,12 +16,10 @@ export class HeaderComponent implements OnInit {
   public goToMenu(): void {
     this.router.navigate(['menu']);
   }
-
+  public goToAuth(): void {
+    this.router.navigate(['auth']);
+  }
   public goToHome(): void {
     this.router.navigate(['']);
-  }
-
-  public goToAllorder(): void {
-    this.router.navigate(['all-order']);
   }
 }
