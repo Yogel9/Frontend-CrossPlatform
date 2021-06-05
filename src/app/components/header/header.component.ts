@@ -19,6 +19,9 @@ export class HeaderComponent implements OnInit {
   public goToAuth(): void {
     this.router.navigate(['auth']);
   }
+  public goToFur(): void {
+    this.router.navigate(['furn']);
+  }
   public goToHome(): void {
     this.router.navigate(['']);
   }

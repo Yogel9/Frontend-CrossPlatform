@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.upmenu
+{
+  background: #52f757;
+}
+.table{
+  line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  margin: 50px;
+}

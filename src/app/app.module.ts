@@ -16,12 +16,19 @@ import {HttpClientModule} from '@angular/common/http';
 import { AuthComponent } from './components/auth/auth.component';
 import { UserComponent } from './components/user/user.component';
 import { FurnituresComponent } from './components/furnitures/furnitures.component';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import { TestComponent } from './components/test/test.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 const routes: Routes = [
   {path: '', component: HomeComponent, },
   {path: 'menu', component: MenuComponent, },
   {path: 'auth', component: AuthComponent, },
   {path: 'user', component: UserComponent, },
+  {path: 'furn', component: FurnituresComponent, },
+  {path: 'test', component: TestComponent, },
   {path: '**', component: HomeComponent, }, /*redirectTo: '',*/
 ];
 
@@ -33,7 +40,8 @@ const routes: Routes = [
     HomeComponent,
     AuthComponent,
     UserComponent,
-    FurnituresComponent
+    FurnituresComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,11 @@ const routes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
