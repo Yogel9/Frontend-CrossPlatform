@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Furniture, Order, User} from '../models';
 
 @Injectable()
 export class HttpService{
@@ -14,12 +15,13 @@ export class HttpService{
   {
     return this.http.get<User[]>('https://localhost:5001/api/Users');
   }
+
+  public getFurnitures(): Observable<Furniture[]>
+  {
+    return this.http.get<Furniture[]>('https://localhost:5001/api/Furnitures');
+  }
 }
 
 
 
-export interface User{
-  id: number;
-  name: string;
-  age: number;
-}
+
