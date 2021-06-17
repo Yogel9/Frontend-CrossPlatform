@@ -1,0 +1,58 @@
+<header>
+<div class="read">
+  <mat-card class="order" *ngFor="let order of MyOrderInf">
+  <p>Номер заказа: {{order?.orderId}}</p>
+  <p>Количество вещей: {{order?.numberOfFurnitures}}</p>
+  <p>Имя клиента: {{order?.nameOfClient}}</p>
+  <p>Адрес заказа: {{order?.address}}</p>
+  <p>Тип доставки: {{order?.deliveryType}}</p>
+  <p>Цена заказа: {{order?.price}}</p>
+  <p>Цена доставки: {{order?.priceDelivery}}</p>
+  </mat-card>
+</div>
+</header>
+
+
+<body>
+<form [formGroup]="formGroup" (ngSubmit)="log()" >
+  <legend>Номер заказа для редактирования: </legend>
+  <select formControlName="select">//выпадающая меню
+    <option disabled selected>
+      Выберите номер
+    </option>
+    <option value="{{order.orderId}}" *ngFor="let order of MyOrderInf">
+      {{order.orderId}}
+    </option>
+  </select>
+
+  <button class="greenbutton" type="submit" (click)="EditInfo()"> <span style="font-size:15px;"> Выбрать </span></button>
+
+
+
+  <fieldset>
+    <legend>Информация о заказе</legend>
+    <label> Название мебели:   &nbsp;<input type="text" value="{{order.name}}" *ngFor="let order of MyFur"> </label>
+    <br>
+    <label> Цена мебели  &nbsp;<input  type="text" value="{{order.price}}" *ngFor="let order of MyFur" readonly> </label>
+    <br>
+    <label> Aдрес: &nbsp;  <input type="text" value="{{order.address}}" *ngFor="let order of MyOrderEd" ></label>
+    <br>
+    <label> Итоговая цена: &nbsp;  <input type="text" value="{{order.price}}" *ngFor="let order of MyOrderEd" readonly></label>
+    <br>
+    <label> Тип доставки: &nbsp;  <input type="text" value="{{order.deliveryType}}" *ngFor="let order of MyOrderEd" ></label>
+    <br>
+
+
+
+
+
+
+  </fieldset>
+
+</form>
+
+
+
+
+
+</body>

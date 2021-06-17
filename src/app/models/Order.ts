@@ -2,12 +2,12 @@ import {User} from './User';
 import {Observable} from 'rxjs';
 import {Furniture} from './Furniture';
 
-export interface Order{
-  id: number;
+export class Order{
+  OrderId: number;
   client: User;
   address: string;
-  DeliveryType: string;
+  deliveryType: string;
   price: number;
-  Furnitures: Observable<Furniture[]>;
+  Furniture: Furniture[];
   PriceDelivery: number;
 }

@@ -1,4 +1,4 @@
-export interface Furniture{
+export class Furniture{
   id: number;
   name: string;
   company: string;
