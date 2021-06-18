@@ -1,0 +1,27 @@
+<form>
+<fieldset>
+  <legend>Информация о заказе</legend>
+  <label> Название мебель  &nbsp;<input type="text" [(ngModel)]="NameFurn" #NameFur="ngModel" max="10" required > </label> <!---->
+  <br>
+  <label> Цена мебели  &nbsp;<input [(ngModel)]="PriceFur"  type="number" > </label> <!---->
+  <br>
+  <label> Мебельная компания: &nbsp;  <input [(ngModel)]="CompanyName" type="text"  ></label>
+  <br>
+  <label> Aдрес доставки: &nbsp;  <input [(ngModel)]="address"  type="text" ></label>
+  <br>
+  <label> Тип доставки: &nbsp;  <input [(ngModel)]="TypeDelivery" type="text" ></label><br>
+</fieldset>
+
+    <div *ngIf="NameFur.invalid && (NameFur.dirty || NameFur.touched)">
+    <div *ngIf="NameFur.errors.required">
+      Required field
+    </div>
+    <div *ngIf="NameFur.errors.max">
+      Max possible value is 100
+    </div>
+    </div>
+
+
+
+  <button class="greenbutton" type="submit" (click)="construct()" > <span style="font-size:15px;"> Добавить заказ </span></button>
+</form>

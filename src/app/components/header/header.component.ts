@@ -28,4 +28,8 @@ export class HeaderComponent implements OnInit {
   public goToMyOrder(): void {
     this.router.navigate(['order']);
   }
+
+  public goToAddOrder(): void {
+    this.router.navigate(['AddOrder']);
+  }
 }

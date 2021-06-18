@@ -7,10 +7,6 @@ import {Furniture, Order, OrderInfo, User} from '../models';
 export class HttpService{
   public environment = 'https://localhost:5001/api/';
   constructor(private http: HttpClient){ }
-
-  getData(){
-    return this.http.get('https://localhost:5001/api/Users/1');  /* ('assets/tsconfig.json');*/ /* package */
-  }
  public getUser(): Observable<User[]>
   {
     return this.http.get<User[]>('https://localhost:5001/api/Users');
@@ -36,10 +32,14 @@ export class HttpService{
   {
     return this.http.get<Furniture[]>(`${this.environment}${'Orders/MyFur?IdOrder='}${idorder}`);
   }
-
-  public postData(){
-    const body = {Address: "b45",  deliveryType: "Express"};
-    return this.http.post('https://localhost:5001/api/Orders', body);
+ public putMyOrder(): any
+   {
+     const body = { orderId: 1, Address: 'b45',  deliveryType: 'Express'};
+     return this.http.put('https://localhost:5001/api/Orders/1', body);
+   }
+   public postData( ord: Order ): any
+   {
+    return this.http.post('https://localhost:5001/api/Orders', ord);
   }
 }
 

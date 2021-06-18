@@ -17,14 +17,13 @@ export class OrderComponent implements OnInit {
   MyOrderInf: OrderInfo[] = [];
   MyOrderEd: Order[] = [] ;
   MyFur: Furniture[] = [];
-
-
+  typeDelivery: string;
+  name: string[] = [];
+  pricename: number[] = [];
+  price: number;
+  address: string;
   public formGroup: FormGroup = new FormGroup({
     select:   new FormControl(''),
-    /*name:     new FormControl(''),
-    price:    new FormControl(''),
-    address:  new FormControl(''),
-    delivery: new FormControl(''),*/
   });
 
   constructor(private http: HttpClient, private httpService: HttpService){}
@@ -37,6 +36,19 @@ export class OrderComponent implements OnInit {
     this.selectId = this.formGroup.get(['select']).value;
     this.httpService.getOrdNotInf(this.selectId).subscribe(res => { this.MyOrderEd = res; });
     this.httpService.getMyFur(this.selectId).subscribe(res => { this.MyFur = res; } );
+    this.typeDelivery = this.MyOrderEd[0].deliveryType;
+    this.price = this.MyOrderEd[0].price; // нефига не нужно так как цену то мы не редактируем
+    this.address = this.MyOrderEd[0].address;
+    for ( var i = 0 ; i < this.MyFur.length; i++)// НЕФИГА НЕ РАБОТАЕТ
+    {
+      this.pricename[i] = this.MyFur[i].price;
+      this.name[i] = this.MyFur[i].name;
+    }
+  }
+
+  public NewEdit()
+  {
+    this.httpService.putMyOrder().subscribe();
   }
 
   log() {

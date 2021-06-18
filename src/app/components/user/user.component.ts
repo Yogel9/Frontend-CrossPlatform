@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
     this.httpService.getUser().subscribe(res => { this.users = res; });
     this.httpService.getFurnitures().subscribe(res => { this.furs = res; });
     /*this.httpService.getData().subscribe((data: any) => this.users = data[  " userList " ]);*/
-    this.httpService.getData().subscribe((data: any) => this.user = new User(data.name, data.age));
+    /*this.httpService.getData().subscribe((data: any) => this.user = new User(data.name, data.age));
    /* this.http.get('assets/package.json').subscribe((data: any) => this.user = new User(data.name, data.age));*/
 }
 }

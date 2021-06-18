@@ -23,13 +23,16 @@ import {MatCardModule} from '@angular/material/card';
 import { OrderComponent } from './components/order/order.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddorderComponent } from './components/addorder/addorder.component';
 const routes: Routes = [
   {path: '', component: HomeComponent, },
   {path: 'auth', component: AuthComponent, },
   {path: 'user', component: UserComponent, },
   {path: 'furn', component: FurnituresComponent, },
   {path: 'order', component: OrderComponent, },
+  {path: 'AddOrder', component: AddorderComponent, },
   {path: '**', component: HomeComponent, }, /*redirectTo: '',*/
 ];
 
@@ -43,6 +46,7 @@ const routes: Routes = [
     UserComponent,
     FurnituresComponent,
     OrderComponent,
+    AddorderComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,9 @@ const routes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
+    FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

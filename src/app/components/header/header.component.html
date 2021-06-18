@@ -21,12 +21,12 @@
         <span> Магазин</span>
       </button>
       <button mat-menu-item (click)="goToMyOrder()">
-        <mat-icon>voicemail</mat-icon>
-        <span>Check voice mail</span>
+        <mat-icon>mode_edit</mat-icon>
+        <span>Изменить заказ</span>
       </button>
-      <button mat-menu-item>
-        <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
+      <button mat-menu-item (click)="goToAddOrder()">
+        <mat-icon>add</mat-icon>
+        <span>Добавить заказ</span>
       </button>
     </mat-menu>
     <span>KomFort+</span>

@@ -27,29 +27,31 @@
 
   <button class="greenbutton" type="submit" (click)="EditInfo()"> <span style="font-size:15px;"> Выбрать </span></button>
 
-
+</form>
 
   <fieldset>
     <legend>Информация о заказе</legend>
-    <label> Название мебели:   &nbsp;<input type="text" value="{{order.name}}" *ngFor="let order of MyFur"> </label>
+    <label> Название мебели:   &nbsp; <input  type="text" value="{{order.name}}" *ngFor="let order of MyFur"  readonly>
+      <!-- <input  type="text"   value="{{MyFur.length}}"  />
+       <div *ngFor="let n of name; let i = index;">
+         <input  type="text" [(ngModel)]="n[i]">
+       </div>-->
+    </label>
     <br>
-    <label> Цена мебели  &nbsp;<input  type="text" value="{{order.price}}" *ngFor="let order of MyFur" readonly> </label>
+    <label> Цена мебели  &nbsp;<input  type="text" value="{{order.price}}" *ngFor="let order of MyFur"  readonly> </label> <!---->
     <br>
-    <label> Aдрес: &nbsp;  <input type="text" value="{{order.address}}" *ngFor="let order of MyOrderEd" ></label>
+    <label> Aдрес: &nbsp;  <input [(ngModel)]="address"  type="text" ></label> <!-- value="{{order.address}}" *ngFor="let order of MyOrderEd"-->
     <br>
-    <label> Итоговая цена: &nbsp;  <input type="text" value="{{order.price}}" *ngFor="let order of MyOrderEd" readonly></label>
+    <label> Итоговая цена: &nbsp;  <input type="text" value="{{order.price}}" *ngFor="let order of MyOrderEd"  readonly></label> <!--value="{{order.price}}" *ngFor="let order of MyOrderEd"-->
     <br>
-    <label> Тип доставки: &nbsp;  <input type="text" value="{{order.deliveryType}}" *ngFor="let order of MyOrderEd" ></label>
+    <label> Тип доставки: &nbsp;  <input [(ngModel)]="typeDelivery" type="text" ></label><!--value="{{order.deliveryType}}" *ngFor="let order of MyOrderEd" -->
     <br>
-
-
-
-
-
-
   </fieldset>
-
+<form>
+  <button class="greenbutton" type="submit" (click)="NewEdit()"> <span style="font-size:15px;"> Сохранить изменения </span></button>
 </form>
+
+
 
 
 
